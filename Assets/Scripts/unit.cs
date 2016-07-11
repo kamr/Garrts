@@ -20,12 +20,31 @@ public class unit : NetworkBehaviour {
 
 		agent = GetComponent <NavMeshAgent> ();
 	}
-	public void attackTarget(unit target)
+	[Command]
+	public void CmdAttackTarget(GameObject targetToAttack)
 	{
+		cooldown = 0;
+		unit target = targetToAttack.GetComponent<unit> ();
+		GameObject unitToSpawn = Resources.Load ("bullet") as GameObject;
+		GameObject instantiated = (GameObject)Instantiate (unitToSpawn, this.transform.position, Quaternion.identity);
+		instantiated.GetComponent<moveBullet> ().target = target;
+		NetworkServer.Spawn(instantiated);
 
 	}
 	public void attackMove()
 	{
+		print ("amoving");
+		GameObject[] allUnits = GameObject.FindGameObjectsWithTag ("unit");
+		ArrayList enemyUnits = new ArrayList ();
+		foreach (GameObject g in allUnits) {
+			if (g.transform.parent != this.transform.parent) {
+				enemyUnits.Add (g);
+				if (Vector3.Distance (this.transform.position, g.transform.position) < range && cooldown > cooldownTimer) {
+					CmdAttackTarget (g);
+					agent.Stop ();
+				}
+			}
+		}
 
 
 
@@ -78,5 +97,6 @@ public class unit : NetworkBehaviour {
 		if (aMoving) {
 			attackMove ();
 		}
+		cooldown++;
 	}
 }

@@ -14,150 +14,51 @@ Platform assembly: C:\Garrts\1_Data\Managed\UnityEngine.UI.dll (this message is 
 Loading C:\Garrts\1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
 Platform assembly: C:\Garrts\1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
 Loading C:\Garrts\1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
-- Completed reload, in  0.283 seconds
+Platform assembly: C:\Garrts\1_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Garrts\1_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Garrts\1_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Garrts\1_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+- Completed reload, in  0.129 seconds
 Platform assembly: C:\Garrts\1_Data\Managed\System.Core.dll (this message is harmless)
 Platform assembly: C:\Garrts\1_Data\Managed\System.dll (this message is harmless)
 desktop: 1920x1080 60Hz; virtual: 1920x1080 at 0,0
 <RI> Initializing input.
 <RI> Input initialized.
 <RI> Initialized touch support.
-UnloadTime: 309.735870 ms
+UnloadTime: 228.534546 ms
 Setting up 2 worker threads for Enlighten.
-  Thread -> id: e33bc -> priority: 1 
-  Thread -> id: e318c -> priority: 1 
+  Thread -> id: e4908 -> priority: 1 
+  Thread -> id: e4764 -> priority: 1 
 Trying to send command for object without authority.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-405 459 875 216
+Trying to send command for object without authority.
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-405 459 875 216
+Failed to spawn server object, assetId=c1d15c1a362fe42aa41d4db19e80ee netId=7
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-405 459 875 216
+Failed to spawn server object, assetId=c1d15c1a362fe42aa41d4db19e80ee netId=8
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Unit unit1(Clone) selected!
+Failed to spawn server object, assetId=c1d15c1a362fe42aa41d4db19e80ee netId=9
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-405 459 875 216
+Failed to spawn server object, assetId=c1d15c1a362fe42aa41d4db19e80ee netId=10
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-405 459 875 216
+Failed to spawn server object, assetId=c1d15c1a362fe42aa41d4db19e80ee netId=11
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-405 459 875 216
+Failed to spawn server object, assetId=c1d15c1a362fe42aa41d4db19e80ee netId=12
  
 (Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
 
-Unit unit1(Clone) selected!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-425 456 941 169
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-425 456 941 169
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-425 456 941 169
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unit unit1(Clone) selected!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-425 456 941 169
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-425 456 941 169
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-425 456 941 169
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unit unit1(Clone) selected!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-475 336 822 121
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-475 336 822 121
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-475 336 822 121
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-475 336 822 121
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-475 336 822 121
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-475 336 822 121
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-507 378 885 197
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-507 378 885 197
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-507 378 885 197
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unit unit1(Clone) selected!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-507 378 885 197
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-507 378 885 197
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-507 378 885 197
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-Unit unit1(Clone) selected!
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-(-18.2, 0.0, -57.5)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-(-18.2, 0.0, -57.5)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
-(-18.2, 0.0, -57.5)
- 
-(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/UnityEngineDebugBindings.gen.cpp Line: 37)
-
+Log: connection {1} has been disconnected by timeout; address {::ffff:127.0.0.1:7777}
