@@ -12,8 +12,11 @@ public class unit : NetworkBehaviour {
 	int cooldown = 0;
 	int cooldownTimer = 100;
 
+	private Projector lightRing;
+
 	void Start () {
-		
+		lightRing = GetComponentInChildren<Projector>();
+		lightRing.enabled = false;
 
 		agent = GetComponent <NavMeshAgent> ();
 	}
@@ -30,6 +33,7 @@ public class unit : NetworkBehaviour {
 	public void Select() {
 		if (hasAuthority) {
 			selected = true;
+			lightRing.enabled = true;
 			print ("Unit " + this.name + " selected!");
 			gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.red);
 		}
@@ -37,6 +41,7 @@ public class unit : NetworkBehaviour {
 
 	public void Unselect() {
 		selected = false;
+		lightRing.enabled = false;
 		gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.white);
 	}
 
