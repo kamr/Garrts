@@ -18,7 +18,7 @@ public class unit : NetworkBehaviour {
 		gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.red);
 	}
 
-	public void UnSelect() {
+	public void Unselect() {
 		selected = false;
 		gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.white);
 	}
