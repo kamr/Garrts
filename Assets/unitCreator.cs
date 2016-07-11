@@ -3,6 +3,10 @@ using System.Collections;
 
 public class unitCreator : MonoBehaviour {
 
+
+	void OnPlayerConnected(NetworkPlayer player) {
+		print ("asdasdafsa");
+	}
 	// Use this for initialization
 	void Start () {
 	
