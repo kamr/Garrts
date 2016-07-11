@@ -55,6 +55,12 @@ public class controller : MonoBehaviour {
 					unitsSelected.Add (u.GetComponent<unit> ());
 				} else u.GetComponent<unit> ().Unselect ();
 			}
+			if (unitsSelected.Count == 0) {
+				foreach (GameObject u in units) {
+					u.GetComponent<unit> ().Select ();
+
+				}
+			}
 			boxClickDown = false;
 		}
 	}
