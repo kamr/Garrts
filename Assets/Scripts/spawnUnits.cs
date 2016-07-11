@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine.Networking;
 
 public class spawnUnits : NetworkBehaviour {
@@ -11,6 +12,7 @@ public class spawnUnits : NetworkBehaviour {
 
 	void Start () {
 		//NetworkServer.SpawnWithClientAuthority (g, Network.connections [0].);
+
 	}
 	// Update is called once per frame
 	void Update () {
@@ -35,9 +37,8 @@ public class spawnUnits : NetworkBehaviour {
 
 		GameObject unitToSpawn = Resources.Load (unitStringToSpawn) as GameObject;
 		GameObject instantiated = (GameObject)Instantiate (unitToSpawn, mousePosition, Quaternion.identity);
-
+		instantiated.transform.parent = this.transform;
 		NetworkServer.SpawnWithClientAuthority (instantiated, player);
 
 	}
-	}
-		
+}
