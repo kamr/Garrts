@@ -10,9 +10,26 @@ public class controller : MonoBehaviour {
 	}
 
 	private bool IsWithinSelectionBounds(GameObject u) {
-		Bounds viewBounds = Utils.GetViewportBounds(Camera.main, mouseStart, Input.mousePosition );
-		return viewBounds.Contains(Camera.main.WorldToViewportPoint(u.transform.position) );
+		Debug.Log (mouseStart.x + " " + mouseStart.y + " " + Input.mousePosition.x + " " + Input.mousePosition.y);
+		Bounds viewBounds = Utils.GetViewportBoundsFromScreen(Camera.main, mouseStart, Input.mousePosition );
+
+		Bounds objectBounds = u.GetComponent<Renderer> ().bounds;
+
+		// NEED TO CONVERT THE OBJECTS POSITION IN WORLD TO OBJECTBOUNDSINVIEW USING UTILS.GETVIEWPORTBOUNDSFROMWORLD
+		// ALSO MUST MODIFY GETVIEWPORTBOUNDSFROMWORLD
+
+		//Bounds objectBoundsInView = Utils.GetViewportBoundsFromWorld(Camera.main, objectBounds.
+
+		//Bounds objectBounds = u.GetComponent<Renderer> ().bounds;
+		//Debug.Log(viewBounds.min + " " + viewBounds.max + " " + objectBounds.min + " " + objectBounds.max);
+		//return viewBounds.Contains (Camera.main.WorldToViewportPoint (u.transform.position));
+		return viewBounds.Intersects(objectBounds);
 	}
+
+	/*Bounds GetMaxBounds(GameObject g) {
+
+		return b;
+	}*/
 
 	void Update () {
 		if (Input.GetMouseButtonDown (0) && boxClickDown == false) {

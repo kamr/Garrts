@@ -34,7 +34,7 @@ public static class Utils
         return Rect.MinMaxRect( topLeft.x, topLeft.y, bottomRight.x, bottomRight.y );
     }
 
-    public static Bounds GetViewportBounds( Camera camera, Vector3 screenPosition1, Vector3 screenPosition2 )
+    public static Bounds GetViewportBoundsFromScreen( Camera camera, Vector3 screenPosition1, Vector3 screenPosition2 )
     {
         var v1 = camera.ScreenToViewportPoint( screenPosition1 );
         var v2 = camera.ScreenToViewportPoint( screenPosition2 );
@@ -42,13 +42,23 @@ public static class Utils
         var max = Vector3.Max( v1, v2 );
         min.z = camera.nearClipPlane;
         max.z = camera.farClipPlane;
-        //min.z = 0.0f;
-        //max.z = 1.0f;
-
         var bounds = new Bounds();
         bounds.SetMinMax( min, max );
         return bounds;
     }
+
+	public static Bounds GetViewportBoundsFromWorld( Camera camera, Vector3 worldPosition1, Vector3 worldPosition2 )
+	{
+		var v1 = camera.WorldToViewportPoint( worldPosition1 );
+		var v2 = camera.WorldToViewportPoint( worldPosition2 );
+		var min = Vector3.Min( v1, v2 );
+		var max = Vector3.Max( v1, v2 );
+		min.z = camera.nearClipPlane;
+		max.z = camera.farClipPlane;
+		var bounds = new Bounds();
+		bounds.SetMinMax( min, max );
+		return bounds;
+	}
 
     public static void DrawScreenRect( Rect rect, Color color )
     {
