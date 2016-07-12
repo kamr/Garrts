@@ -56,6 +56,36 @@ public class controller : MonoBehaviour {
 			}
 			boxClickDown = false;
 		}
+				if (Input.mousePosition.x > 0.95 * Screen.width) {
+						
+						Vector3 endPosition = new Vector3 (Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+						endPosition.x += 3;	
+						endPosition.z -= 3;
+					//	Camera.main.transform.position = endPosition;
+					}
+				if (Input.mousePosition.x < 0.05 * Screen.width) {
+			
+						Vector3 endPosition = new Vector3 (Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+						endPosition.x -= 3;	
+						endPosition.z += 3;
+				//	Camera.main.transform.position = endPosition;
+					}
+		
+				if (Input.mousePosition.y < 0.05 * Screen.height) {
+			
+						Vector3 endPosition = new Vector3 (Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+						endPosition.x -= 3;	
+						endPosition.z -= 3;
+						//Camera.main.transform.position = endPosition;
+					}
+				if (Input.mousePosition.y > 0.95 * Screen.height) {
+			
+						Vector3 endPosition = new Vector3 (Camera.main.transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+						endPosition.x += 3;	
+						endPosition.z += 3;
+						//Camera.main.transform.position = endPosition;
+					}
+		
 	}
 
 	void OnGUI()
