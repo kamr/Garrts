@@ -26,7 +26,7 @@ public class spawnUnits : NetworkBehaviour {
 				positionToSend = hit.point;
 			}
 
-			NetworkIdentity i = gameObject.GetComponent<NetworkIdentity> ();
+			//NetworkIdentity i = gameObject.GetComponent<NetworkIdentity> ();
 			CmdSpawnAUnit (this.gameObject,positionToSend,unitOne);
 
 		}
@@ -34,10 +34,11 @@ public class spawnUnits : NetworkBehaviour {
 	//unity weirdness, this NEEDS to have the Cmd part of CmdSpawnAUnit prefixing it
 	//god knows why theyre using method names as part of their code generation.......
 	[Command] void CmdSpawnAUnit(GameObject player,Vector3 mousePosition,string unitStringToSpawn)  {
-
 		GameObject unitToSpawn = Resources.Load (unitStringToSpawn) as GameObject;
 		GameObject instantiated = (GameObject)Instantiate (unitToSpawn, mousePosition, Quaternion.identity);
 		instantiated.transform.parent = this.transform;
+		instantiated.GetComponentInChildren<unit> ().setOwner (Network.player.ToString ());
+		//((unit)instantiated).setOwner (Network.player.ToString);
 		NetworkServer.SpawnWithClientAuthority (instantiated, player);
 
 	}

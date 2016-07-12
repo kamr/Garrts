@@ -5,6 +5,7 @@ using UnityEngine.Networking;
 public class unit : NetworkBehaviour {
 	public GameObject circle;
 	public int range = 1000000;
+	public int spellRange = 1000000;
 	bool selected = false;
 	NavMeshAgent agent;
 	bool aMoving = false;
@@ -13,12 +14,37 @@ public class unit : NetworkBehaviour {
 	int cooldownTimer = 100;
 
 	private Projector lightRing;
+	string ownerID;
+
+	// USEFUL LATER. this.netId IS OBJECTS ID ON NETWORK OR SOMETHING
+
+	private Color pickColour(string id) {
+		switch (id) {
+			case "-1":
+				return Color.blue;
+			case "0":
+				return Color.red;
+			case "1":
+				return Color.magenta;
+			default:
+				return Color.yellow;
+		}
+	}
+	public void setOwner(string ownerID) { // To prevent hacking, could surround in a boolean and only allow run once
+		//playerID = 
+		//Debug.Log(Network.isClient);
+		//ownerID = this.playerControllerId;
+		//playerID = GetComponent<NetworkView> ().owner.ToString();
+		//Debug.Log(this.playerControllerId + " " + this.isLocalPlayer + " ");
+		//print ("Player " + ownerID + " spawned " + this.name);
+		gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", pickColour(ownerID));
+	}
 
 	void Start () {
 		lightRing = GetComponentInChildren<Projector>();
 		lightRing.enabled = false;
-
 		agent = GetComponent <NavMeshAgent> ();
+		//setOwner ();
 	}
 	[Command]
 	public void CmdAttackTarget(GameObject targetToAttack)
@@ -45,23 +71,21 @@ public class unit : NetworkBehaviour {
 				}
 			}
 		}
-
-
-
 	}	
+
 	public void Select() {
 		if (hasAuthority) {
 			selected = true;
 			lightRing.enabled = true;
 			print ("Unit " + this.name + " selected!");
-			gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.red);
+			//gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.red);
 		}
 	}
 
 	public void Unselect() {
 		selected = false;
 		lightRing.enabled = false;
-		gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.white);
+		//gameObject.GetComponent<Renderer> ().material.SetColor ("_Color", Color.white);
 	}
 
 	void Update () {
@@ -71,13 +95,17 @@ public class unit : NetworkBehaviour {
 		if (aClickPressed && Input.GetMouseButtonDown (1)) {
 			aClickPressed = false;
 		}
-		if (Input.GetMouseButtonDown(1) && selected) {
+		if ((Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.T)) && selected) {
 			aMoving = false; 
 			RaycastHit hit;
 			Ray ray = Camera.main.ScreenPointToRay (Input.mousePosition);
 			if (Physics.Raycast (ray, out hit)) {
 				print (hit.point);
-				agent.SetDestination (hit.point);
+				if (Input.GetMouseButtonDown (1)) {
+					agent.SetDestination (hit.point);
+				} else if (Input.GetKeyDown (KeyCode.T)) {
+					agent.transform.position = hit.point;
+				}
 			}
 		}
 

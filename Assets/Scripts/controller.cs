@@ -27,17 +27,10 @@ public class controller : MonoBehaviour {
 		*/
 		//not working code just commented 4 now so i can work on other stuff
 
-			Debug.Log (mouseStart.x + " " + mouseStart.y + " " + Input.mousePosition.x + " " + Input.mousePosition.y);
-			Bounds viewBounds = Utils.GetViewportBoundsFromScreen(Camera.main, mouseStart, Input.mousePosition );
-			return viewBounds.Contains (Camera.main.WorldToViewportPoint (u.transform.position));
-	
-
+			//Debug.Log (mouseStart.x + " " + mouseStart.y + " " + Input.mousePosition.x + " " + Input.mousePosition.y);
+		Bounds viewBounds = Utils.GetViewportBoundsFromScreen(Camera.main, mouseStart, Input.mousePosition );
+		return viewBounds.Contains (Camera.main.WorldToViewportPoint (u.transform.position));
 	}
-
-	/*Bounds GetMaxBounds(GameObject g) {
-
-		return b;
-	}*/
 
 	void Update () {
 		if (Input.GetMouseButtonDown (0) && boxClickDown == false) {
